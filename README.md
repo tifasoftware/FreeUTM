@@ -7,3 +7,4 @@ FreeUTM is a project intended to recreate the features of the Mac-Exclusive [UTM
 - Create Graphical Version for either GTK or QT
 - Support for other backends like [Distrobox](https://github.com/89luca89/distrobox), Docker, LXC, etc.
 - Implement Guidance for GPU Passthrough Projects
+- Release Packages to AUR and eventually be included in official repos.
