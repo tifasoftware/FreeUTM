@@ -1,3 +1,9 @@
 __pycache__/config.cpython-311.pyc
 .DS_Store
 __pycache__/create_machine.cpython-311.pyc
+HP-UX/HP-UX_hdd0.qcow2
+HP-UX/start.sh
+XP/.start.sh.swp
+XP/start.sh
+XP/XP_hdd0.qcow2
+.gitignore

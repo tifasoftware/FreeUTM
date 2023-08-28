@@ -20,7 +20,8 @@ def appliance_list():
     print ("Appliances:")
     for file in os.listdir(os.getcwd()):
         if (os.path.isdir(os.getcwd() + "/" + file) == True):
-            print (file)
+            if (os.path.isdir(os.getcwd() + "/" + file + "/run.sh") == True):
+                print (file)
 
     print()
 
@@ -32,24 +33,27 @@ while (machine != ":q"):
     print("Select Appliance or Command (:h for help): ")
     machine = input()
     if (os.path.isdir(os.getcwd() + "/" + machine) == True):
-        print()
-        print("Machine: " + machine)
-        choice = ""
-        while (choice != "C"):
-            choice = input("(R)un, (E)dit, or (C)ancel: ")
-            if (choice.upper() == "R"):
-                create_machine.runMachine(machine)
-            elif (choice.upper() == "E" or choice.upper() == "EE" or choice.upper() == "EN"):
-                choice2 = ""
-                if (choice == "E"):
-                    choice2 = input("(E)dit Config, Create (N)ew Hard Drive, or (C)ancel: ")
-                    
-                if (choice ==  "EE" or choice2 == "E"):
-                    create_machine.editConfig(machine)
+        if (os.path.isdir(os.getcwd() + "/" + machine + "/run.sh") == True):
+            print()
+            print("Machine: " + machine)
+            choice = ""
+            while (choice != "C"):
+                choice = input("(R)un, (E)dit, or (C)ancel: ")
+                if (choice.upper() == "R"):
+                    create_machine.runMachine(machine)
+                elif (choice.upper() == "E" or choice.upper() == "EE" or choice.upper() == "EN"):
+                    choice2 = ""
+                    if (choice == "E"):
+                        choice2 = input("(E)dit Config, Create (N)ew Hard Drive, or (C)ancel: ")
+                        
+                    if (choice ==  "EE" or choice2 == "E"):
+                        create_machine.editConfig(machine)
 
-                elif (choice == "EN" or choice2 == "N"):
-                    hdname = create_machine.create_hdd(machine)
-                    print("New Hard Drive FileName is: " + hdname)
+                    elif (choice == "EN" or choice2 == "N"):
+                        hdname = create_machine.create_hdd(machine)
+                        print("New Hard Drive FileName is: " + hdname)
+        else:
+            print("Not a Virtual Machine Directory")
     elif (machine == ":q"):
         print ("Quitting")
     elif (machine == ":h"):
@@ -65,9 +69,3 @@ while (machine != ":q"):
         break
     else:
         print("Appliance Doesn't Exist or Invalid Command")
-    
-
-        
-
-
-
