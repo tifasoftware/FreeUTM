@@ -4,6 +4,10 @@ FreeUTM is a project intended to recreate the features of the Mac-Exclusive [UTM
 
 If you have an issue with this program, reach out to us or the QEMU project, but not to the UTM or Turing Software.
 
+## Prerequisites
+- Python 3
+- QEMU (full with all of the emulators)
+
 ## Future Goals
 - Implement Options to Customize the Machine without having to learn QEMU arguments
 - Create Graphical Version for either GTK or QT
