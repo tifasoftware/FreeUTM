@@ -87,7 +87,7 @@ def create_vm(_vmname):
     print ("Enter RAM in MB: ")
     mem = input()
 
-    hda = create_hdd(vmname, True)
+    hda = create_hdd(vmname, False)
 
     vm_run_cmd = "qemu-system-" + arch + " -m " + mem + " -machine " + machine + " -hda " + hda
 
