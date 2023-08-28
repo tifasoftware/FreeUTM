@@ -60,7 +60,7 @@ while (machine != ":q"):
     elif (machine == ":l"):
         appliance_list()
     elif (machine == ":n"):
-        create_machine("")
+        create_machine.create_vm("")
     elif (machine == ":q"):
         break
     else:
