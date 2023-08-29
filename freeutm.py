@@ -20,7 +20,7 @@ def appliance_list():
     print ("Appliances:")
     for file in os.listdir(os.getcwd()):
         if (os.path.isdir(os.getcwd() + "/" + file) == True):
-            if (os.path.isdir(os.getcwd() + "/" + file + "/run.sh") == True):
+            if (os.path.exists(os.getcwd() + "/" + file + "/start.sh") == True):
                 print (file)
 
     print()
@@ -33,7 +33,7 @@ while (machine != ":q"):
     print("Select Appliance or Command (:h for help): ")
     machine = input()
     if (os.path.isdir(os.getcwd() + "/" + machine) == True):
-        if (os.path.isdir(os.getcwd() + "/" + machine + "/run.sh") == True):
+        if (os.path.exists(os.getcwd() + "/" + machine + "/start.sh") == True):
             print()
             print("Machine: " + machine)
             choice = ""
